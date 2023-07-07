@@ -11,6 +11,6 @@ function TodoList(props){
         })
     }
 
-    return <li onClick={handleClick} style={{textDecoration: strike ? "line-through":null}}>{props.text}</li>
+    return <li onClick={handleClick} style={{textDecoration: strike ? "line-through":none}}>{props.text}</li>
 }
 export default TodoList;
