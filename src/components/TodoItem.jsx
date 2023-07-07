@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-function todoList(props){
-    return <li>{props.text}</li>
+function TodoList(props){
+
+    const [strike,setStrike]= useState(false)
+
+    function handleClick(){
+
+        setStrike((previousValue)=>{
+            return !previousValue
+        })
+    }
+
+    return <li onClick={handleClick} style={{textDecoration: strike ? "line-through":null}}>{props.text}</li>
 }
-export default todoList;
+export default TodoList;
