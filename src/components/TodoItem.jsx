@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 
-function TodoList(props){
+function TodoItem(props) {
+  const [strike, setStrike] = useState(false);
 
-    const [strike,setStrike]= useState(false)
+  function handleClick() {
+    setStrike((previousValue) => !previousValue);
+  }
 
-    function handleClick(){
-
-        setStrike((previousValue)=>{
-            return !previousValue
-        })
-    }
-
-    return <li onClick={handleClick} style={{textDecoration: strike ? "line-through":none}}>{props.text}</li>
+  return (
+    <li
+      onClick={handleClick}
+      style={{ textDecoration: strike ? "line-through" : "none" }}
+    >
+      {props.todo.item}
+      <button className="delete-btn" onClick={() => props.delete(props.todo.id)}>
+        Delete
+      </button>
+    </li>
+  );
 }
-export default TodoList;
+
+export default TodoItem;
