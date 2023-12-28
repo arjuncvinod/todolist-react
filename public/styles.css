@@ -76,4 +76,9 @@ li {
   text-align: left;
   position: relative;
   padding: 0.5rem;
+  list-style: disc;
+}
+.delete-btn{
+  position: absolute;
+  right: 0;
 }
